@@ -1,11 +1,11 @@
-import { Sugestoes } from "./Sugestoes"
-
+import { Sugestoes } from "./Sugestoes";
+import { Usuario } from "./Usuario";
 
 export const SideBar = () => {
   return (
     <>
       <div class="sidebar">
-        <div class="usuario">
+        <Usuario>
           <img src="assets/catanacomics.svg" alt="imagem de perfil" />
           <div class="texto">
             <span>
@@ -13,7 +13,7 @@ export const SideBar = () => {
               <ion-icon name="pencil"></ion-icon>
             </span>
           </div>
-        </div>
+        </Usuario>
 
         <Sugestoes />
 

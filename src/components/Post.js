@@ -1,12 +1,14 @@
+import { Usuario } from "./Usuario"
+
 export const Post = () => {
   return (
     <>
       <div class="post">
         <div class="topo">
-          <div class="usuario">
+          <Usuario>
             <img src="assets/meowed.svg" alt="meowed" />
             meowed
-          </div>
+          </Usuario>
           <div class="acoes">
             <ion-icon name="ellipsis-horizontal"></ion-icon>
           </div>
@@ -39,10 +41,10 @@ export const Post = () => {
 
       <div class="post">
         <div class="topo">
-          <div class="usuario">
+          <Usuario>
             <img src="assets/barked.svg" alt="barked" />
             barked
-          </div>
+          </Usuario>
           <div class="acoes">
             <ion-icon name="ellipsis-horizontal"></ion-icon>
           </div>
