@@ -2,28 +2,33 @@ import { Sugestoes } from "./Sugestoes";
 import { Usuario } from "./Usuario";
 
 export const SideBar = () => {
+  const user = [{ src: "assets/catanacomics.svg", alt: "imagem de perfil", user: "catanacomics" }]
+  const copyright = "© 2021 INSTAGRAM DO FACEBOOK"
+  const links = "Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma"
+
   return (
     <>
       <div class="sidebar">
-        <Usuario>
-          <img src="assets/catanacomics.svg" alt="imagem de perfil" />
-          <div class="texto">
-            <span>
-              <strong>catanacomics</strong>
-              <ion-icon name="pencil"></ion-icon>
-            </span>
-          </div>
-        </Usuario>
+        {user.map(item =>
+          <Usuario>
+            <img src={item.src} alt={item.alt} />
+            <div class="texto">
+              <span>
+                <strong>{item.user}</strong>
+                <ion-icon name="pencil"></ion-icon>
+              </span>
+            </div>
+          </Usuario>
+        )}
 
         <Sugestoes />
 
         <div class="links">
-          Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
-          Hashtags • Idioma
+          {links}
         </div>
 
         <div class="copyright">
-          © 2021 INSTAGRAM DO FACEBOOK
+          {copyright}
         </div>
       </div>
     </>
