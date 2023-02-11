@@ -1,62 +1,28 @@
 import { Usuario } from "./Usuario"
 
 export const Sugestao = () => {
+  const perfilSugerido = [
+    { src: "assets/bad.vibes.memes.svg", user: "bad.vibes.memes", razao: "Segue você", seguir: "Seguir" },
+    { src: "assets/chibirdart.svg", user: "chibirdart", razao: "Segue você", seguir: "Seguir" },
+    { src: "assets/razoesparaacreditar.svg", user: "razoesparaacreditar", razao: "Novo no Instagram", seguir: "Seguir" },
+    { src: "assets/adorable_animals.svg", user: "adorable_animals", razao: "Segue você", seguir: "Seguir" },
+    { src: "assets/smallcutecats.svg", user: "smallcutecats", razao: "Segue você", seguir: "Seguir" }
+  ]
+
   return (
     <>
-      <div class="sugestao">
-        <Usuario>
-          <img src="assets/bad.vibes.memes.svg" alt="bad.vibes.memes.svg" />
-          <div class="texto">
-            <div class="nome">bad.vibes.memes</div>
-            <div class="razao">Segue você</div>
-          </div>
-        </Usuario>
-        <div class="seguir">Seguir</div>
-      </div>
-
-      <div class="sugestao">
-        <Usuario>
-          <img src="assets/chibirdart.svg" alt="chibirdart" />
-          <div class="texto">
-            <div class="nome">chibirdart</div>
-            <div class="razao">Segue você</div>
-          </div>
-        </Usuario>
-        <div class="seguir">Seguir</div>
-      </div>
-
-      <div class="sugestao">
-        <Usuario>
-          <img src="assets/razoesparaacreditar.svg" alt="razoesparaacreditar" />
-          <div class="texto">
-            <div class="nome">razoesparaacreditar</div>
-            <div class="razao">Novo no Instagram</div>
-          </div>
-        </Usuario>
-        <div class="seguir">Seguir</div>
-      </div>
-
-      <div class="sugestao">
-        <Usuario>
-          <img src="assets/adorable_animals.svg" alt="adorable_animals" />
-          <div class="texto">
-            <div class="nome">adorable_animals</div>
-            <div class="razao">Segue você</div>
-          </div>
-        </Usuario>
-        <div class="seguir">Seguir</div>
-      </div>
-
-      <div class="sugestao">
-        <Usuario>
-          <img src="assets/smallcutecats.svg" alt="smallcutecats" />
-          <div class="texto">
-            <div class="nome">smallcutecats</div>
-            <div class="razao">Segue você</div>
-          </div>
-        </Usuario>
-        <div class="seguir">Seguir</div>
-      </div>
+      {perfilSugerido.map(item =>
+        <div class="sugestao">
+          <Usuario>
+            <img src={item.src} alt={item.user} />
+            <div class="texto">
+              <div class="nome">{item.user}</div>
+              <div class="razao">{item.razao}</div>
+            </div>
+          </Usuario>
+          <div class="seguir">{item.seguir}</div>
+        </div>
+      )}
     </>
   )
 }
