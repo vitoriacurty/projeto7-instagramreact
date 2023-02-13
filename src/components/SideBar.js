@@ -25,11 +25,11 @@ export const SideBar = () => {
       <div class="sidebar">
         {user.map(item =>
           <Usuario>
-            <img src={photo} alt={item.alt} onClick={editPhoto}/>
+            <img src={photo} alt={item.alt} onClick={editPhoto} data-test="profile-image"/>
             <div class="texto">
-              <span>
+              <span data-test="name">
                 <strong>{name}</strong>
-                <ion-icon name="pencil" onClick={editUserName}></ion-icon>
+                <ion-icon name="pencil" onClick={editUserName} data-test="edit-name"></ion-icon>
               </span>
             </div>
           </Usuario>
