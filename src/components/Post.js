@@ -37,7 +37,7 @@ export const Post = (props) => {
 
   return (
     <>
-      <div class="post">
+      <div class="post" data-test="post">
         <div class="topo">
           <Usuario>
             <img src={props.srcUser} alt={props.user} />
@@ -49,24 +49,24 @@ export const Post = (props) => {
         </div>
 
         <div class="conteudo">
-          <img src={props.srcCont} alt={props.altCont} onClick={likeImage} />
+          <img src={props.srcCont} alt={props.altCont} onClick={likeImage} data-test="post-image"/>
         </div>
 
         <div class="fundo">
           <div class="acoes">
             <div>
-              <ion-icon class={color} name={like} onClick={likePost}></ion-icon>
+              <ion-icon class={color} name={like} onClick={likePost} data-test="like-post"></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-              <ion-icon name={save} onClick={savePost}></ion-icon>
+              <ion-icon name={save} onClick={savePost} data-test="save-post"></ion-icon>
             </div>
           </div>
 
           <div class="curtidas">
             <img src={props.srcCurt} alt={props.altCurt} />
-            <div class="texto">
+            <div class="texto" data-test="likes-number">
               Curtido por <strong>{props.altCurt}</strong> e <strong>outras {curt.toFixed(3)} pessoas</strong>
             </div>
           </div>
