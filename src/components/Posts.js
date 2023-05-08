@@ -60,9 +60,24 @@ function Post(props) {
   }
 
   function curtirFoto() {
-    setLike(like === "heart-outline" ? "heart" : "heart-outline");
-    setCor(like === "heart-outline" ? "vermelho" : "preto");
-    setQtdLikes(qtdLikes + (like === "heart-outline" ? 1 : -1));
+    
+    if (like === "heart-outline") {
+      setQtdLikes(qtdLikes + 1)
+      setLike("heart")
+      setCor("vermelho")
+    } else {
+      setQtdLikes(qtdLikes - 1)
+      setLike("heart-outline")
+      setCor("preto")
+    }
+  }
+
+  function curtirClicandoNaFoto(){
+    if (like === "heart-outline") {
+      setQtdLikes(qtdLikes + 1)
+      setLike("heart")
+      setCor("vermelho")
+    }
   }
   return (
     <div class="post" data-test="post">
@@ -77,7 +92,7 @@ function Post(props) {
       </div>
 
       <div class="conteudo">
-        <img data-test="post-image" onClick={curtirFoto} src={props.imgConteudo} alt="gato-telefone" />
+        <img data-test="post-image" onClick={curtirClicandoNaFoto} src={props.imgConteudo} alt="gato-telefone" />
       </div>
 
       <div class="fundo">
